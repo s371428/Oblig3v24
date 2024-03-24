@@ -4,7 +4,7 @@ OsloMet brukernavn: s371428
 
 GitHub brukernavn: s371428
 
-Github repo URL: https://github.com/s371428/Oblig3v24webprog
+Github repo URL: https://github.com/s371428/Oblig3v24
 
 Fullt navn: Mewan Andre Mohammad
 
