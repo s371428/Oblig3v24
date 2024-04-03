@@ -1,6 +1,7 @@
 package oslomet.webprog;
 
 public class Billett {
+    private int id;
     private String film;
     private String antall;
     private String fornavn;
@@ -8,7 +9,8 @@ public class Billett {
     private String telefonnr;
     private String epost;
 
-    public Billett(String film, String antall, String fornavn, String etternavn, String telefonnr, String epost) {
+    public Billett(int id, String film, String antall, String fornavn, String etternavn, String telefonnr, String epost) {
+        this.id = id;
         this.film = film;
         this.antall = antall;
         this.fornavn = fornavn;
@@ -19,6 +21,14 @@ public class Billett {
 
 
     //public Billett(){ } //sjekk etterhvert om du trenger denne
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getFilm() {
         return film;
