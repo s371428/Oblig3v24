@@ -1,6 +1,3 @@
-//Oppretter et Array for å lagre billetter
-//let billettRegister = [];
-
 //Funksjon for å validere valgt film
 function valideringSjekkFilm(film){
     if(!film){
@@ -123,8 +120,6 @@ function BillettRegister(){
         hentAlle();
     });
 
-    //billettRegister.push(nyBillett); //Legger til billetten i arrayet
-
     klarererForm(); //Resetter og klarerer utfyllingene for neste billett
 }
 
@@ -160,7 +155,7 @@ function klarererForm(){
     $("#epost").val("");
 }
 
-//Funksjon som fjerner billettene i fra billettRegister Arrayet
+//Funksjon som fjerner billettene
 function slettAlleBilletter(){
     $.get("/slettAlle", function (){
         visBillettTabell([]); //Viser tabellen på nytt, skal vise en tom tabell
