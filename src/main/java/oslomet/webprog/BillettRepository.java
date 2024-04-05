@@ -24,7 +24,7 @@ public class BillettRepository {
         return alleBilletter;
     }
 
-    public void slettAlleBilletter(){ //Metode for å slette billettene
+    public void slettAlleBilletter(){ //Metode for å slette billettene fra tabellen
         String sql = "DELETE FROM Billett";
         db.update(sql);
     }
