@@ -123,28 +123,6 @@ function BillettRegister(){
     klarererForm(); //Resetter og klarerer utfyllingene for neste billett
 }
 
-function hentAlle(){
-    $.get("/hentAlle", function (data){
-        visBillettTabell(data); //Funksjon som viser billett tabellen
-    });
-}
-
-//Funksjon som viser billett tabellen og tillegg til registrerte billetter
-function visBillettTabell(billetter){
-    let utskriftAvBillett = "<table class='table table-striped' style='text-align: center'><tr>" +
-        "<th><h3>Film</h3></th><th><h3>Antall</h3></th><th><h3>Fornavn</h3></th><th><h3>Etternavn</h3></th><th><h3>Telefonnr</h3></th><th><h3>Epost</h3></th>" +
-        "</tr>";
-
-    for(const nyBillett of billetter){
-        utskriftAvBillett+="<tr>";
-        utskriftAvBillett+="<td>"+nyBillett.film+"</td><td>"+nyBillett.antall+"</td><td>"+nyBillett.fornavn+"</td><td>"+nyBillett.etternavn+"</td><td>"+nyBillett.telefonnr+"</td><td>"+nyBillett.epost+"</td>";
-        utskriftAvBillett+="</tr>";
-    }
-    utskriftAvBillett+="<table>";
-
-    $("#billettRegister").html(utskriftAvBillett);
-}
-
 //Funksjon som fjerner skrevet inn verdier, denne funksjonen benyttes i visBillettRegister funksjonen
 function klarererForm(){
     $("#velg").val("");
@@ -154,6 +132,50 @@ function klarererForm(){
     $("#telefonnr").val("");
     $("#epost").val("");
 }
+
+function hentAlle(){
+    $.get("/hentAlle", function (data){
+        visBillettTabell(data); //Funksjon som viser billett tabellen
+    });
+}
+
+//Funksjon som viser billett tabellen og tillegg til registrerte billetter
+function visBillettTabell(billetter){
+    let utskriftAvBillett = "<table class='table table-striped' style='text-align: center'><tr>" +
+        "<th><strong>Film</strong></th>" +
+        "<th><strong>Antall</strong></th>" +
+        "<th><strong>Fornavn</strong></th>" +
+        "<th><strong>Etternavn</strong></th>" +
+        "<th><strong>Telefonnr</strong></th>" +
+        "<th><strong>Epost</strong></th>" +
+        "<th></th>" +
+        "<th></th>" +
+        "</tr>";
+
+    for(const nyBillett of billetter){
+        utskriftAvBillett+="<tr>";
+        utskriftAvBillett+="<td>"+nyBillett.film+"</td>" +
+                           "<td>"+nyBillett.antall+"</td>" +
+                           "<td>"+nyBillett.fornavn+"</td>" +
+                           "<td>"+nyBillett.etternavn+"</td>" +
+                           "<td>"+nyBillett.telefonnr+"</td>" +
+                           "<td>"+nyBillett.epost+"</td>" +
+                           "<td><button type='button' class='btn btn-primary'>Endre</button></td>" +
+                           "<td><button type='button' class='btn btn-danger' onclick='slettEnBillett("+nyBillett.id+")'>Slett</button></td>";
+        utskriftAvBillett+="</tr>";
+    }
+    utskriftAvBillett+="<table>";
+
+    $("#billettRegister").html(utskriftAvBillett);
+}
+
+
+function slettEnBillett(id){
+    const url = "/slettEnBillett?id="+id;
+    $.get(url, function (){
+        window.location.href = 'index.html';
+    });
+};
 
 //Funksjon som fjerner billettene
 function slettAlleBilletter(){

@@ -30,6 +30,11 @@ public class BillettController {
         //return billettRegister;
     }
 
+    @GetMapping("/slettEnBillett")
+    public void slettEnBillett(int id){
+        rep.slettEnBillett(id);
+    }
+
     @GetMapping("/slettAlle")
     public void slettAlle(){
         rep.slettAlleBilletter();
