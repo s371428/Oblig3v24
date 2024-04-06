@@ -24,6 +24,19 @@ public class BillettRepository {
         return alleBilletter;
     }
 
+    public Billett hentEnBillett(int id){
+        Object[] param = new Object[1];
+        param[0] = id;
+        String sql = "SELECT * FROM Billett WHERE id=?";
+        Billett enBillett = db.queryForObject(sql, param, BeanPropertyRowMapper.newInstance(Billett.class));
+        return enBillett;
+    }
+
+    public void endreEnBillett(Billett billett){
+        String sql = "UPDATE Billett SET film=?, antall=?, fornavn=?, etternavn=?, telefonnr=?, epost=? where id=?";
+        db.update(sql,billett.getFilm(),billett.getAntall(),billett.getFornavn(),billett.getEtternavn(),billett.getTelefonnr(),billett.getEpost(),billett.getId());
+    }
+
     public void slettEnBillett(int id){
         String sql = "DELETE FROM Billett WHERE id=?";
         db.update(sql,id);

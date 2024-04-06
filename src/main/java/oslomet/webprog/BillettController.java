@@ -14,7 +14,7 @@ public class BillettController {
     //private final List<Billett> billettRegister = new ArrayList<>();
 
     @Autowired //Bruker Autowired for å hente BillettRepository klassen
-    private BillettRepository rep;
+    BillettRepository rep;
 
     @PostMapping("/lagre")
     public void lagreBillett(Billett innBillett){
@@ -28,6 +28,16 @@ public class BillettController {
         return rep.hentAlleBilletter();
 
         //return billettRegister;
+    }
+
+    @GetMapping("/hentEnBillett")
+    public Billett hentEnBillett(int id){
+        return rep.hentEnBillett(id);
+    }
+
+    @PostMapping("/endreEnBillett")
+    public void endreEnBillett(Billett billett){
+        rep.endreEnBillett(billett);
     }
 
     @GetMapping("/slettEnBillett")

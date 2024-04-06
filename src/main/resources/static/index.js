@@ -160,7 +160,7 @@ function visBillettTabell(billetter){
                            "<td>"+nyBillett.etternavn+"</td>" +
                            "<td>"+nyBillett.telefonnr+"</td>" +
                            "<td>"+nyBillett.epost+"</td>" +
-                           "<td><button type='button' class='btn btn-primary'>Endre</button></td>" +
+                           "<td><a class='btn btn-primary' href='endreBillett.html?id="+nyBillett.id+"'>Endre</a></td>" +
                            "<td><button type='button' class='btn btn-danger' onclick='slettEnBillett("+nyBillett.id+")'>Slett</button></td>";
         utskriftAvBillett+="</tr>";
     }
@@ -173,7 +173,7 @@ function visBillettTabell(billetter){
 function slettEnBillett(id){
     const url = "/slettEnBillett?id="+id;
     $.get(url, function (){
-        window.location.href = 'index.html';
+        window.location.href = "/";
     });
 };
 
