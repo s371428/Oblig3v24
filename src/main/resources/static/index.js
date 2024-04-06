@@ -167,13 +167,25 @@ function visBillettTabell(billetter){
     utskriftAvBillett+="<table>";
 
     $("#billettRegister").html(utskriftAvBillett);
+
+
 }
 
+//Kode som viser registrerte billetter som vil fremdeles vises etter at en billett er endret, så lenge det er registrert minst en billett
+$(function() {
+    $.get("/hentAlle", function (data) {
+        if (data.length > 0) {
+            // Vis tabellhodene hvis det er billetter tilgjengelig
+            visBillettTabell(data);
+        }
+    });
+});
 
 function slettEnBillett(id){
     const url = "/slettEnBillett?id="+id;
     $.get(url, function (){
-        window.location.href = "/";
+        //window.location.href = "/";
+        hentAlle();
     });
 };
 
