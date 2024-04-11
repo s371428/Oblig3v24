@@ -181,6 +181,8 @@ $(function() {
     });
 });
 
+
+//Funksjon som lar deg slette en enkelt billett
 function slettEnBillett(id){
     const url = "/slettEnBillett?id="+id;
     $.get(url, function (){

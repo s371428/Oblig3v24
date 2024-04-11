@@ -11,23 +11,17 @@ import java.util.List;
 @RestController
 public class BillettController {
 
-    //private final List<Billett> billettRegister = new ArrayList<>();
-
     @Autowired //Bruker Autowired for å hente BillettRepository klassen
     BillettRepository rep;
 
     @PostMapping("/lagre")
     public void lagreBillett(Billett innBillett){
         rep.lagreBillett(innBillett);
-
-        //billettRegister.add(innBillett);
     }
 
     @GetMapping("/hentAlle")
     public List<Billett> hentAlle(){
         return rep.hentAlleBilletter();
-
-        //return billettRegister;
     }
 
     @GetMapping("/hentEnBillett")
@@ -48,8 +42,6 @@ public class BillettController {
     @GetMapping("/slettAlle")
     public void slettAlle(){
         rep.slettAlleBilletter();
-
-        //billettRegister.clear(); //Tømmer arrayet
     }
 }
 

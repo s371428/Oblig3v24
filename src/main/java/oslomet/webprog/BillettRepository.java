@@ -24,25 +24,25 @@ public class BillettRepository {
         return alleBilletter;
     }
 
-    public Billett hentEnBillett(int id){
-        Object[] param = new Object[1];
+    public Billett hentEnBillett(int id){ //Metode for å hente en billett basert på ID inne på databasen
+        Object[] param = new Object[1]; //Oppretter en array med en enkelt plass for paramateren (ID)
         param[0] = id;
         String sql = "SELECT * FROM Billett WHERE id=?";
-        Billett enBillett = db.queryForObject(sql, param, BeanPropertyRowMapper.newInstance(Billett.class));
+        Billett enBillett = db.queryForObject(sql, param, BeanPropertyRowMapper.newInstance(Billett.class)); //Utfører spørringen på databasen og mapper resultatet til en Billett-klasse
         return enBillett;
     }
 
-    public void endreEnBillett(Billett billett){
+    public void endreEnBillett(Billett billett){ //Metode for å endre en billett inne på databasen
         String sql = "UPDATE Billett SET film=?, antall=?, fornavn=?, etternavn=?, telefonnr=?, epost=? where id=?";
         db.update(sql,billett.getFilm(),billett.getAntall(),billett.getFornavn(),billett.getEtternavn(),billett.getTelefonnr(),billett.getEpost(),billett.getId());
     }
 
-    public void slettEnBillett(int id){
+    public void slettEnBillett(int id){ //Metode for å slette en billett fra tabellen inne på databasen
         String sql = "DELETE FROM Billett WHERE id=?";
         db.update(sql,id);
     }
 
-    public void slettAlleBilletter(){ //Metode for å slette billettene fra tabellen
+    public void slettAlleBilletter(){ //Metode for å slette billettene fra tabellen inne på databasen
         String sql = "DELETE FROM Billett";
         db.update(sql);
     }
