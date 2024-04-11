@@ -34,7 +34,7 @@ function valideringSjekkFornavn(fornavn){
         $("#valideringfornavn").text("Må skrive inn noe inn i fornavnet"); //Gir beskjed om å skrive inn fornavn hvis det ikke ble skrevet inn noe i input feltet
         return false;
     }
-    else if(/[^a-zA-Z]/.test(fornavn)){ //Tester om fornavn inneholder noe annet enn bokstavene a-z og A-Z
+    else if(/[^a-æøåA-ÆØÅ]/.test(fornavn)){ //Tester om fornavn inneholder noe annet enn bokstavene a-z og A-Z
         $("#valideringfornavn").text("Ugyldig verdi - Vennligst skriv inn fornavn"); //Viser feilmelding hvis fornavn inneholder andre symboler, selv om det er bokstaver i fornavnet
         return false;
     } else {
@@ -49,7 +49,7 @@ function valideringSjekkEtternavn(etternavn){
         $("#valideringetternavn").text("Må skrive inn noe inn i etternavnet"); //Gir beskjed om å skrive inn etternavn hvis det ikke ble skrevet inn noe i input feltet
         return false;
     }
-    else if(/[^a-zA-Z]/.test(etternavn)){ //Tester om fornavn inneholder noe annet enn bokstavene a-z og A-Z
+    else if(/[^a-æøåA-ÆØÅ]/.test(etternavn)){ //Tester om fornavn inneholder noe annet enn bokstavene a-z og A-Z
         $("#valideringetternavn").text("Ugyldig verdi - Vennligst skriv inn etternavn"); //Viser feilmelding hvis etternavn inneholder andre symboler, selv om det er bokstaver i etternavnet
         return false;
     } else {
