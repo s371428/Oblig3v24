@@ -13,7 +13,7 @@ $(function(){
 });
 
 function endreBilletten(){
-    console.log("Endre billett knapp klikket");
+    console.log("Endre billett knapp klikket"); //Sjekker om at billettknapp funksjonen fungerer
 
     const film = $("#velg").val();
     const antall = $("#antall").val();
@@ -22,7 +22,10 @@ function endreBilletten(){
     const telefonnr = $("#telefonnr").val();
     const epost = $("#epost").val();
 
-    if(!endrevalideringSjekkFilm(film) | !endrevalideringSjekkAntall(antall) | !endrevalideringSjekkFornavn(fornavn) | !endrevalideringSjekkEtternavn(etternavn) | !endrevalideringSjekkTelefonnr(telefonnr) | !endrevalideringSjekkEpost(epost)){
+
+    //Sjekker om alle valideringsfunksjonene returnerer 'false', som indikerer at minst en av inputverdiene ikke er gyldig
+    //Hindrer at billetten blir endret dersom minst en av inputfeltene inneholder ugyldig verdi
+    if(!endreValideringSjekkFilm(film) | !endreValideringSjekkAntall(antall) | !endreValideringSjekkFornavn(fornavn) | !endreValideringSjekkEtternavn(etternavn) | !endreValideringSjekkTelefonnr(telefonnr) | !endreValideringSjekkEpost(epost)){
         return;
     }
 
@@ -40,8 +43,8 @@ function endreBilletten(){
     });
 }
 
-//Funksjon for å validere valgt film
-function endrevalideringSjekkFilm(film){
+//Funksjon for å validere valgt endret film
+function endreValideringSjekkFilm(film){
     if(!film){
         $("#endrevalideringfilm").text("Må velge en film"); //Viser feilmelding hvis det ikke ble valgt en film (dette er ikke nødvendig å ha med i forhold til oppgaven, men kan være greit å gjøre brukeren obs på at det ikke ble valgt en film)
         return false;
@@ -51,8 +54,8 @@ function endrevalideringSjekkFilm(film){
     return true;
 }
 
-//Funksjon for validering av antall billetter
-function endrevalideringSjekkAntall(antall){
+//Funksjon for validering av endring av antall billetter
+function endreValideringSjekkAntall(antall){
     if(!antall){
         $("#endrevalideringantall").text("Må skrive inn noe i antall"); //Viser beskjed om å skrive inn tall hvis det ikke ble skrevet inn noe tall
         return false;
@@ -70,8 +73,8 @@ function endrevalideringSjekkAntall(antall){
     return true;
 }
 
-//Funksjon for validering av fornavn
-function endrevalideringSjekkFornavn(fornavn){
+//Funksjon for validering av endret fornavn
+function endreValideringSjekkFornavn(fornavn){
     if(!fornavn){
         $("#endrevalideringfornavn").text("Må skrive inn noe inn i fornavnet"); //Gir beskjed om å skrive inn fornavn hvis det ikke ble skrevet inn noe i input feltet
         return false;
@@ -85,8 +88,8 @@ function endrevalideringSjekkFornavn(fornavn){
     return true;
 }
 
-//Funksjon for validering av etternavn
-function endrevalideringSjekkEtternavn(etternavn){
+//Funksjon for validering av endret etternavn
+function endreValideringSjekkEtternavn(etternavn){
     if(!etternavn){
         $("#endrevalideringetternavn").text("Må skrive inn noe inn i etternavnet"); //Gir beskjed om å skrive inn etternavn hvis det ikke ble skrevet inn noe i input feltet
         return false;
@@ -100,8 +103,8 @@ function endrevalideringSjekkEtternavn(etternavn){
     return true;
 }
 
-//Funksjon for validering av telefonnummer
-function endrevalideringSjekkTelefonnr(telefonnr){
+//Funksjon for validering av endret telefonnummer
+function endreValideringSjekkTelefonnr(telefonnr){
     if(!telefonnr){
         $("#endrevalideringtelefonnr").text("Må skrive inn noe inn i telefonnr");
         return false;
@@ -115,8 +118,8 @@ function endrevalideringSjekkTelefonnr(telefonnr){
     return true;
 }
 
-//Funksjon for validering av epostadresse
-function endrevalideringSjekkEpost(epost){
+//Funksjon for validering av endret epostadresse
+function endreValideringSjekkEpost(epost){
     if(!epost){
         $("#endrevalideringepost").text("Må skrive inn noe inn i epost");
         return false;

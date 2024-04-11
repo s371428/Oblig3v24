@@ -10,8 +10,10 @@
 
 <body class="container">
 
-
 <h1 class="mt-5 mb-4">Bestilling av kinobiletter</h1>
+
+<form class="form">
+
 <label for="velg">Velg film:</label>
 <select class="" name="film" id="velg">
     <option value="">Velg film her</option>
@@ -31,16 +33,24 @@
 
 <table>
     <tr>
-        <td>Fornavn</td> <td><input type="text" id="fornavn"/></td> <td id="valideringfornavn" style="color: red"></td>
+        <td>Fornavn</td>
+        <td><input type="text" id="fornavn"/></td>
+        <td id="valideringfornavn" style="color: red"></td>
     </tr>
     <tr>
-        <td>Etternavn</td> <td><input type="text" id="etternavn"/></td> <td id="valideringetternavn" style="color: red"></td>
+        <td>Etternavn</td>
+        <td><input type="text" id="etternavn"/></td>
+        <td id="valideringetternavn" style="color: red"></td>
     </tr>
     <tr>
-        <td>Telefonnr</td> <td><input type="text" id="telefonnr"/></td> <td id="valideringtelefonnr" style="color: red"></td>
+        <td>Telefonnr</td>
+        <td><input type="text" id="telefonnr"/></td>
+        <td id="valideringtelefonnr" style="color: red"></td>
     </tr>
     <tr>
-        <td>Epost</td> <td><input type="text" id="epost"/></td> <td id="valideringepost" style="color: red"></td>
+        <td>Epost</td>
+        <td><input type="text" id="epost"/></td>
+        <td id="valideringepost" style="color: red"></td>
     </tr>
 </table>
 <br>
@@ -52,6 +62,8 @@
 <div id="billettRegister"></div>
 
 <button type="button" class="btn btn-danger" onclick="slettAlleBilletter()">Slett alle billettene</button>
+
+</form>
 
 </body>
 </html>

@@ -10,8 +10,8 @@
 
 <body class="container">
 
-
 <h1 class="mt-5 mb-4">Endring av kinobillett</h1>
+
 <form class="form">
 
 <input type="hidden" id="id"/>
@@ -35,23 +35,29 @@
 
 <table>
     <tr>
-        <td>Fornavn</td> <td><input type="text" id="fornavn"/></td><td id="endrevalideringfornavn" style="color: red"></td>
+        <td>Fornavn</td>
+        <td><input type="text" id="fornavn"/></td>
+        <td id="endrevalideringfornavn" style="color: red"></td>
     </tr>
     <tr>
-        <td>Etternavn</td> <td><input type="text" id="etternavn"/></td><td id="endrevalideringetternavn" style="color: red"></td>
+        <td>Etternavn</td>
+        <td><input type="text" id="etternavn"/></td>
+        <td id="endrevalideringetternavn" style="color: red"></td>
     </tr>
     <tr>
-        <td>Telefonnr</td> <td><input type="text" id="telefonnr"/></td><td id="endrevalideringtelefonnr" style="color: red"></td>
+        <td>Telefonnr</td>
+        <td><input type="text" id="telefonnr"/></td>
+        <td id="endrevalideringtelefonnr" style="color: red"></td>
     </tr>
     <tr>
-        <td>Epost</td> <td><input type="text" id="epost"/></td><td id="endrevalideringepost" style="color: red"></td>
+        <td>Epost</td>
+        <td><input type="text" id="epost"/></td>
+        <td id="endrevalideringepost" style="color: red"></td>
     </tr>
 </table>
 <br>
 
-<div>
-<input type="button" value="Endre" class="btn btn-primary" onclick="endreBilletten()"/>
-</div>
+<button type="button" class="btn btn-primary" onclick="endreBilletten()">Endre</button>
 
 </form>
 
