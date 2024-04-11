@@ -171,7 +171,7 @@ function visBillettTabell(billetter){
 
 }
 
-//Kode som viser registrerte billetter som vil fremdeles vises etter at en billett er endret, så lenge det er registrert minst en billett
+//Funksjon som viser registrerte billetter som vil fremdeles vises etter at en billett er endret, så lenge det er registrert minst en billett
 $(function() {
     $.get("/hentAlle", function (data) {
         if (data.length > 0) {
@@ -187,7 +187,7 @@ function slettEnBillett(id){
         //window.location.href = "/";
         hentAlle();
     });
-};
+}
 
 //Funksjon som fjerner billettene
 function slettAlleBilletter(){
