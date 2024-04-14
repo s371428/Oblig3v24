@@ -14,4 +14,4 @@ Beskrivesle fra oblig 1: Applikasjon som registrerer billetter. Flere input felt
 
 Beskrivelse fra oblig 2: Lagt til funksjonalitet som Lagrer billetter inne i et array inne på en server ved bruk av Springboot og Java. Prosjektet har en Billett java kode for opprettelse av disse billett objektene. BillettController er også lagt til med funksjonaliteter som lagrer, henter og sletter billett objektene. HTML er stylet med Bootstrap, slik at det blir mer brukervennlig å benytte klienten.
 
-Beskrivelse fra oblig 3: ....
+Beskrivelse fra oblig 3: Erstattet arrayet på tjener/server med en tabell i relasjonsdatabase. H2-"in-memory"-database ble benyttet for dette. La til forskjellige kode inne på src/main/rescources/application.properties for å få tilgang til databasen. Opprettet en schema sql fil for å opprette tabellen Billett. Opprettet java klassen BillettRepository for å kunne opprette, lagre, slette og hente billettene i tabellen i databasen. La til også mulighet for å endre eller slette en enkelt billett inne på klienten.
