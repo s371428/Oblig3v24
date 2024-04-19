@@ -9,7 +9,9 @@ public class Billett {
     private String telefonnr;
     private String epost;
 
-    public Billett(){ }
+    public Billett(){ } //Standard konstruktør uten parametere
+    //Når denne konstruktøren blir kalt, opprettes et Billett-objekt uten å sette noen verdier.
+    //Hvis denne ikke er med, vil ikke programmet vite hvordan koden skal koble seg til andre java koder
 
     public Billett(int id, String film, String antall, String fornavn, String etternavn, String telefonnr, String epost) {
         this.id = id;
