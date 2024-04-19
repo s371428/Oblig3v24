@@ -1,7 +1,7 @@
 $(function(){
-    const id = window.location.search.substring(1);
-    const url = "/hentEnBillett?"+id;
-    $.get(url,function(billett){
+    const id = window.location.search.substring(1); //Henter ID fra URL-parameteren
+    const url = "/hentEnBillett?"+id; //Setter opp URL-en for å hente en billett basert på id
+    $.get(url,function(billett){ //Sender GET-forespørsel til serveren for å hente billettdata fra serveren
         $("#id").val(billett.id);
         $("#velg").val(billett.film);
         $("#antall").val(billett.antall);

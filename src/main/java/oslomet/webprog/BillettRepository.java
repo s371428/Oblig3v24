@@ -19,7 +19,7 @@ public class BillettRepository {
     }
 
     public List<Billett> hentAlleBilletter(){ //Lar seg hente opp alle registrerte billetter i fra tabellen Billett (hente metode)
-        String sql = "SELECT * FROM Billett ORDER BY etternavn";
+        String sql = "SELECT * FROM Billett ORDER BY etternavn"; //Setter opp billettene i alfabatisk rekkefølge etter etternavn
         List<Billett> alleBilletter = db.query(sql, new BeanPropertyRowMapper(Billett.class)); //BeanPropertyRowMapper tar en klasse definisjon. Klassen Billett blir da et objekt som man kan kalle med Billett definisjonen, og den mapper kolonnene i tabellen til klassen Billett
         return alleBilletter;
     }
