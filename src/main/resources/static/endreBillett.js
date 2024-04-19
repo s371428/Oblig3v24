@@ -64,7 +64,7 @@ function endreValideringSjekkAntall(antall){
         $("#endrevalideringantall").text("Ugyldig verdi - Vennligst skriv inn antall billetter"); //Viser feilmesling hvis det ble skrevet inn noe annet enn tall
         return false;
     }
-    else if(parseInt(antall) < 1 || parseInt(antall) > 99){
+    else if(!/^[1-9][0-9]?$|^99$/.test(antall)){
         $("#endrevalideringantall").text("Vennligst velg antall billetter mellom 1 og 99"); //Viser feilmelding hvis det ble skrevet inn et antall mindre enn 1 eller større enn 99
         return false;
     } else {
@@ -109,8 +109,8 @@ function endreValideringSjekkTelefonnr(telefonnr){
         $("#endrevalideringtelefonnr").text("Må skrive inn noe inn i telefonnr");
         return false;
     }
-    else if(isNaN(telefonnr) || telefonnr.length !== 8){ //Viser feilmelding hvis telefonnummer inneholder andre symboler enn tall og om nummeret ikke består av 8 siffere
-        $("#endrevalideringtelefonnr").text("Ugyldig verdi - Telefonnummer må bestå av 8 siffer");
+    else if(!/^\d{8}$/.test(telefonnr)) { //Viser feilmelding hvis telefonnummer inneholder andre symboler enn tall og om nummeret ikke består av 8 siffere
+        $("#valideringtelefonnr").text("Ugyldig verdi - Telefonnummer må bestå av 8 siffer");
         return false;
     } else {
         $("#endrevalideringtelefonnr").text("");
